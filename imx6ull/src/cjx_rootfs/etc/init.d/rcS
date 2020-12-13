@@ -1,0 +1,15 @@
+#!/bin/sh
+ 
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:$PATH
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib:/usr/lib
+export PATH LD_LIBRARY_PATH  
+mount -a 8 mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+#网络开机自启动设�
+ifconfig eth0 up
+#udhcpc -i eth0 
+ifconfig eth0 192.168.1.110 netmask 255.255.255.0 
+route add default gw 192.168.1.1

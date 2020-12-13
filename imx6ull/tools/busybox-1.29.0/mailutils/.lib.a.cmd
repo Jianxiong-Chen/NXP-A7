@@ -1,0 +1,1 @@
+cmd_mailutils/lib.a := rm -f mailutils/lib.a; /usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-ar  rcs mailutils/lib.a mailutils/mail.o mailutils/makemime.o mailutils/popmaildir.o mailutils/reformime.o mailutils/sendmail.o
